@@ -1,6 +1,6 @@
 angular.module('YoutubeApp')
 .controller('YoutubeController', ['$scope','$http', function($scope, $http){
-	
+
 	$scope.watchUrl = "https://www.youtube.com/watch?v=";
 
 	$scope.getYoutubeData = function(searchResults){

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+$grey: #ccc;
+$lighterGrey: #DADDD8;
+$prettyFont: 'Luckiest Guy', cursive;
+
+body {
+	h1{
+		font-family: $prettyFont;
+	}
+}
+.container-fluid {
+	input[type=text] {
+    width: 200px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('http://simpleicon.com/wp-content/uploads/active-search.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+	}
+}
+
+.container-fluid {
+	input[type=text]:focus {
+    width: 100%;
+	}
+}
+
+
+a {
+	.youtube {
+		list-style: none;
+		font-family: $prettyFont;
+
+	}
+}
+
+a {
+	span {
+		font-size: 12px;
+		color: black;
+		border-top: 2px solid #fff;
+	}
+}
+
+div{
+	.youtube-bg{
+		margin-left: 300px
+	}
+}
+
+.youtube{
+	img {
+		margin: 20px;
+	}
+}
