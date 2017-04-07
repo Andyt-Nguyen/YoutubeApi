@@ -30,6 +30,17 @@ gulp.task('build-js', function() {
       .pipe(gulp.dest('./dist/js'));
 });
 
+gulp.task('build-lib', function() {
+   return gulp.src('Bootstrap-Youtube-Popup-Player-Plugin-master/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(print())
+      .pipe(babel({ presets: ['es2015'] }))
+      .pipe(concat('lib.js')) //mash into one file
+      //.pipe(uglify())
+      .pipe(sourcemaps.write('./'))  //spits file in dist
+      .pipe(gulp.dest('./dist/lib'));
+});
+
 gulp.task('build', ['build-css', 'build-js'], function() {
     return gulp.src('index.html')
         .pipe(cachebust.references())

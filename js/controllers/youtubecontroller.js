@@ -1,3 +1,16 @@
+// YoutubeApp
+// .controller('YoutubeController', ['$scope','YoutubeService', function($scope, YoutubeService){
+// 	$scope.getYoutubeApi = function(){
+// 		var promise = YoutubeService.getYoutubeData();
+// 		promise.then(function(response){
+// 			console.log(response.data);
+// 		});
+// 	}
+// }]);
+
+
+
+//Just In Case Things Goes Bad
 YoutubeApp
 .controller('YoutubeController', ['$scope','$http', function($scope, $http){
 	//Background image
@@ -6,7 +19,6 @@ YoutubeApp
 
 	//Youtube API
 	$scope.watchUrl = "https://www.youtube.com/watch?v=";
-	$scope.nextToken = ""
 	// $scope.prevToken = "CAwQAQ";
 	$scope.getYoutubeData = function(searchResults){
 		$http({
@@ -18,13 +30,23 @@ YoutubeApp
 				maxResults: 12,
 				q: searchResults,
 				type: 'video',
-				pageToken: $scope.nextToken
+				pageToken: $scope.token
 			}
 		}).then(function(response){
 			console.log(response.data);
+			console.log(response.data.nextPageToken);
 			 $scope.youtube = response.data.items;
+			 $scope.searchBarYoutube = searchResults;
 			 $scope.searchResults = "";
+
+//Change between pages
+			 $scope.nextToken = response.data.nextPageToken;
+			 $scope.prevToken = response.data.prevPageToken;
+
+			 $scope.moveTokenPage = function(token){
+				 $scope.token = token;
+				 $scope.getYoutubeData($scope.searchBarYoutube);
+			 }
 		});
 	}
-	//======================
 }]);

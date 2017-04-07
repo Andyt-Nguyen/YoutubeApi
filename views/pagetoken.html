@@ -1,5 +1,6 @@
 <div class="pageToken">
-	<h1>HELLO IM WORKING</h1>
-	<button ng-click="nextToken='CAwQAA'">Next</button>
-	<button ng-click="nextToken='CAwQAQ'">Prev</button>
+	<div class="tokens">
+		<a ng-click="moveTokenPage(prevToken)" class="btn-floating btn-large waves-effect waves-light light-blue accent-1 token-prev"><i class="skip_previous">Prev</i></a>
+		<a ng-click="moveTokenPage(nextToken)" class="btn-floating btn-large waves-effect waves-light light-blue accent-1 token-next"><i class="skip_next">Next</i></a>
+	</div>
 </div>
