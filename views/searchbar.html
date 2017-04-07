@@ -1,10 +1,12 @@
 <div class="container-fluid">
 	<form ng-submit="getYoutubeData(searchResults)">
-		<input class="searchbar" type="text" ng-model="searchResults" placeholder="Search videos...">
+		<input class="searchbar" type="text" ng-model="searchResults" placeholder="Search Videos">
 			<div ng-repeat="youtubes in youtube">
 				<div class="col-md-4">
-					<a class="youtube" style="text-decoration:none;"  href="{{watchUrl + youtubes.id.videoId}}"><img ng-src="{{youtubes.snippet.thumbnails.high.url}}" width="400px" alt=""></a>
-					<a class="youtube" style="text-decoration:none;" href="{{watchUrl + youtubes.id.videoId}}"></a>
+					<a class="youtube" style="text-decoration:none;"  href="{{watchUrl + youtubes.id.videoId}}"><img ng-src="{{youtubes.snippet.thumbnails.high.url}}" alt=""></a>
+					<a class="youtube" style="text-decoration:none;" href="{{watchUrl + youtubes.id.videoId}}">
+						<p class="title">{{youtubes.snippet.title}}</p>
+					</a>
 				</div>
 			</div>
 	</form>

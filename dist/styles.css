@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 body h1 {
-  font-family: "Luckiest Guy", cursive; }
+  font-family: "Raleway", sans-serif; }
 
 .container-fluid input[type=text] {
+  margin-left: 22%;
   width: 200px;
   box-sizing: border-box;
   border: 2px solid #ccc;
@@ -17,11 +19,13 @@ body h1 {
   transition: width 0.4s ease-in-out; }
 
 .container-fluid input[type=text]:focus {
-  width: 100%; }
+  width: 60%;
+  text-align: center;
+  font-size: 40px; }
 
 a .youtube {
   list-style: none;
-  font-family: "Luckiest Guy", cursive; }
+  font-family: "Raleway", sans-serif; }
 
 a span {
   font-size: 12px;
@@ -32,6 +36,21 @@ div .youtube-bg {
   margin-left: 300px; }
 
 .youtube img {
-  margin: 20px; }
+  margin: 40px 20px 0 20px;
+  width: 410px; }
+
+.youtube .title {
+  font-family: "Raleway", sans-serif;
+  margin: 10px 40px 0px 40px;
+  font-size: 20px;
+  color: black;
+  width: 410px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.thumbnails:hover {
+  background: #f3f3f3;
+  border-radius: 10px; }
 
 /*# sourceMappingURL=maps/styles.css.map */

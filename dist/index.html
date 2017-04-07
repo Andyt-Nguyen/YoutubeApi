@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="css/materialize/css/materialize.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="dist/styles.css">
@@ -17,6 +18,7 @@
 		<script src="js/app.js" charset="utf-8"></script>
 		<script src="js/controllers/youtubecontroller.js" charset="utf-8"></script>
 		<script src="js/directives/searchbar.js" charset="utf-8"></script>
+		<script src="js/directives/pagetoken.js" charset="utf-8"></script>
 		<!-- <script src="js/services/youtubeservice.js" charset="utf-8"></script> -->
 		<!-- <script src="directives/pagination.js" charset="utf-8"></script> -->
 		<!-- <script src="directives/searchbox.js" charset="utf-8"></script> -->
@@ -24,8 +26,9 @@
 	</head>
 	<body>
 		<h1>HELLO</h1>
+		<changing-pages></changing-pages>
 		<div>
-			<img class="youtube-bg" src="https://www.youtube.com/yt/brand/media/image/YouTube-logo-full_color.png" alt="">
+			<img class="youtube-bg" src="{{youtubeLogo}}" alt="">
 		</div>
 		<search-bar></search-bar>
 	</body>
