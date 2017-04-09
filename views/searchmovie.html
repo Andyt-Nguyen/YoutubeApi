@@ -1,6 +1,6 @@
 <div class="container-fluid">
-	<form ng-submit="getYoutubeApi(searchResults)">
-		<input class="searchbar col-md-12 col-sm-12" type="text" ng-model="searchResults" placeholder="Search...">
+	<form ng-submit="getMovieData(searchResults)">
+		<input class="searchbar col-md-12 col-sm-12" type="text" ng-model="searchResults" placeholder="Search Movies...">
 			<div ng-repeat="youtubes in youtube">
 				<div class="col-md-4 col-sm-6 col-xs-12">
 					<a class="youtube" style="text-decoration:none;"  href="{{watchUrl + youtubes.id.videoId}}">

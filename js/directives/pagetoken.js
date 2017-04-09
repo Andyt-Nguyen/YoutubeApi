@@ -1,4 +1,4 @@
-YoutubeApp.directive('changingPages', function(){
+YoutubeApp.directive('tokenToken', function(){
 	return{
 		restrict: "E",
 		controller: "YoutubeController",

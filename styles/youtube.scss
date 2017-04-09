@@ -9,31 +9,35 @@ body {
 		font-family: $prettyFont;
 	}
 }
-.container-fluid {
-	input[type=text] {
-		margin-left: 20%;
-    width: 55%;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('http://simpleicon.com/wp-content/uploads/active-search.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-	}
-}
-
-.container-fluid {
-	input[type=text]:focus {
-    width: 58%;
-		text-align: center;
-		font-size: 25px;
-	}
-}
+// .container-fluid {
+// 	input[type=text] {
+// 		text-align: center;
+// 		font-size: 25px;
+// 		margin-left: 20%;
+//     width: 55%;
+//     box-sizing: border-box;
+//     border: 2px solid #ccc;
+//     border-radius: 4px;
+//     font-size: 16px;
+//     background-color: white;
+//     background-image: url('http://simpleicon.com/wp-content/uploads/active-search.png');
+//     background-position: 10px 10px;
+//     background-repeat: no-repeat;
+//     padding: 12px 20px 12px 40px;
+//     -webkit-transition: width 0.4s ease-in-out;
+//     transition: width 0.4s ease-in-out;
+// 	}
+// }
+//
+// .container-fluid {
+// 	input[type=text]:focus {
+// 		border-bottom: 1px solid #ff1744;
+// 		box-shadow: 0 1px 0 0 #ff1744;
+//     width: 58%;
+// 		text-align: center;
+// 		font-size: 25px;
+// 	}
+// }
 
 
 a {
@@ -60,7 +64,7 @@ div{
 
 .youtube{
 	img {
-		margin: 40px 20px 0 20px;
+		margin: 40px 20px 0 10px;
 		width: 410px;
 	}
 }
@@ -68,7 +72,7 @@ div{
 .youtube{
 		.title{
 			font-family: $prettyFont;
-			margin: 10px 40px 0px 40px;
+			margin: 10px 40px 20px 40px;
 			font-size: 20px;
 			color: black;
 			width: 410px;
@@ -99,6 +103,7 @@ img {
 }
 
 .tokens {
+	margin-bottom: 20px;
 
 }
 .token-prev{
@@ -107,3 +112,22 @@ img {
 
 .token-next{
 }
+
+.nav-wrapper{
+	background-color: red;
+}
+
+// $primary-color: color("materialize-red", "lighten-4") !default;
+// $primary-color-light: false !default;
+// $primary-color-dark: false !default;
+// @if not $primary-color-light {
+// 	$primary-color-light: lighten($primary-color, 15%);
+// }
+// @if not $primary-color-dark {
+// 	$primary-color-dark: darken($primary-color, 15%);
+// }
+// $secondary-color: color("teal", "lighten-1") !default;
+// $success-color: color("green", "base") !default;
+// $error-color: color("red", "base") !default;
+//
+// $link-color: color("light-blue", "darken-1") !default;

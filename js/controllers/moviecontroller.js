@@ -1,14 +1,14 @@
 YoutubeApp
-.controller('YoutubeController', ['$scope','YoutubeService', function($scope, YoutubeService){
+.controller('YTMovieController', ['$scope','MovieService', function($scope, MovieService){
 
 	console.log('Inside the controller.');
-	$scope.youtubeLogo = YoutubeService.youtubeLogo;
-	$scope.watchUrl = YoutubeService.watchUrl;
+	$scope.youtubeLogo = MovieService.youtubeLogo;
+	$scope.watchUrl = MovieService.watchUrl;
 	$scope.showToken = true;
 
-	$scope.getYoutubeApi = function(searchResults){
+	$scope.getMovieData = function(searchResults){
 		console.log('Reached inside the function getYoutubeApi in controller');
-		var promise = YoutubeService.getYoutubeSearch(searchResults);
+		var promise = MovieService.getMovieData(searchResults);
 		promise.then(function(response){
 			$scope.youtube = response.items;
 			console.log('This is the response from controller', response);
@@ -25,13 +25,13 @@ YoutubeApp
 			console.log('This is the next token', $scope.nextToken, ' inside the controller');
 
 			$scope.moveTokenPage = function(token){
-				YoutubeService.moveTokenPage(token);
+				MovieService.moveTokenPage(token);
 				$scope.getYoutubeApi(searchResults);
 			}
 		});
 	}
 
-	$scope.getYoutubeViews = YoutubeService.getYoutubeViews();
+	$scope.getYoutubeViews = MovieService.getMovieData();
 }]);
 
 

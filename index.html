@@ -17,15 +17,9 @@
 		<title>Youtube Api</title>
 	</head>
 	<body>
-		<div class="row">
-			<div class="col-md-offset-4 col-xs-offset-4">
-				<img class="youtube-bg img-responsive" src="{{youtubeLogo}}" alt="">
-			</div>
-			<changing-pages></changing-pages>
-		</div>
-		<search-bar></search-bar>
-		<changing-pages></changing-pages>
-
+		<nav-bar></nav-bar>
+		<header ng-include="'logo.html'"></header>
+		<ui-view></ui-view>
 	</body>
 </html>
 
