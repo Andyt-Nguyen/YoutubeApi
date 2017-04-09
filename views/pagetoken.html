@@ -1,6 +1,12 @@
 <div class="pageToken">
-	<div class="tokens">
-		<a ng-click="moveTokenPage(prevToken)" class="btn-floating btn-large waves-effect waves-light light-blue accent-1 token-prev"><i class="skip_previous">Prev</i></a>
-		<a ng-click="moveTokenPage(nextToken)" class="btn-floating btn-large waves-effect waves-light light-blue accent-1 token-next"><i class="skip_next">Next</i></a>
+	<div class="tokens container">
+		<div class="row">
+			<div class="col-md-offset-1 col-xs-2">
+				<a ng-click="moveTokenPage(prevToken)" class="btn-floating btn-large waves-effect waves-light light-blue accent-1 token-prev"><i class="skip_previous">Prev</i></a>
+			</div>
+			<div class="col-md-offset-10 col-xs-offset-10">
+				<a ng-click="moveTokenPage(nextToken)" class="btn-floating btn-large waves-effect waves-light light-blue accent-1 token-next"><i class="skip_next">Next</i></a>
+			</div>
+		</div>
 	</div>
 </div>

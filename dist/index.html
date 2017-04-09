@@ -11,16 +11,21 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js" charset="utf-8"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js" charset="utf-8"></script>
+		<script src="js/services/youtubeservice.js" charset="utf-8"></script>
 		<script src="dist/js/bundle.js"></script>
 		<script src="dist/lib/lib.js"></script>
 		<title>Youtube Api</title>
 	</head>
 	<body>
-		<div>
-			<img class="youtube-bg img-responsive" src="{{youtubeLogo}}" alt="">
+		<div class="row">
+			<div class="col-md-offset-4 col-xs-offset-4">
+				<img class="youtube-bg img-responsive" src="{{youtubeLogo}}" alt="">
+			</div>
 			<changing-pages></changing-pages>
 		</div>
 		<search-bar></search-bar>
+		<changing-pages></changing-pages>
+
 	</body>
 </html>
 

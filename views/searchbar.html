@@ -1,8 +1,8 @@
 <div class="container-fluid">
-	<form ng-submit="getYoutubeData(searchResults)">
-		<input class="searchbar" type="text" ng-model="searchResults" placeholder="Watch Videos W/O Ads">
+	<form ng-submit="getYoutubeApi(searchResults)">
+		<input class="searchbar col-md-12 col-sm-12" type="text" ng-model="searchResults" placeholder="Watch Videos W/O Ads">
 			<div ng-repeat="youtubes in youtube">
-				<div class="col-md-4">
+				<div class="col-md-4 col-xs-12">
 					<a class="youtube" style="text-decoration:none;"  href="{{watchUrl + youtubes.id.videoId}}">
 						<img class="card-panel hoverable" ng-src="{{youtubes.snippet.thumbnails.high.url}}" alt="">
 					</a>
@@ -13,4 +13,3 @@
 			</div>
 	</form>
 </div>
-<changing-pages></changing-pages>
