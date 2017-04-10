@@ -1,17 +1,23 @@
+<div class="movie-upper">
+<header ng-include="'logo.html'"></header>
 <div class="container-fluid">
 	<form ng-submit="getMovieData(searchResults)">
-		<input class="searchbar col-md-12 col-sm-12" type="text" ng-model="searchResults" placeholder="Search Movies...">
-			<div ng-repeat="youtubes in youtube">
-				<div class="col-md-4 col-sm-6 col-xs-12">
-					<a class="youtube" style="text-decoration:none;"  href="{{watchUrl + youtubes.id.videoId}}">
-						<img class="card-panel hoverable" ng-src="{{youtubes.snippet.thumbnails.high.url}}" alt="">
-					</a>
-					<a class="youtube" style="text-decoration:none;" href="{{watchUrl + youtubes.id.videoId}}">
-						<p class="title">{{youtubes.snippet.title}}</p>
-						<small>{{youtubes.snippet.channelTitle}}</small>
-					</a>
-				</div>
+		<div class="search-block">
+			<input class="searchbar col-md-12 col-sm-12 search-text" style="color:#fff;" type="text" ng-model="searchResults" placeholder="Search Movies...">
+		</div>
+		<div ng-repeat="youtubes in youtube">
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				<a class="youtube" style="text-decoration:none;"  href="{{watchUrl + youtubes.id.videoId}}">
+					<img class="card-panel hoverable" ng-src="{{youtubes.snippet.thumbnails.high.url}}" alt="">
+				</a>
+				<a class="youtube" style="text-decoration:none;" href="{{watchUrl + youtubes.id.videoId}}">
+					<p class="title">{{youtubes.snippet.title}}</p>
+					<h4 class="channel-title"><small>Uploaded by: </small>{{youtubes.snippet.channelTitle}}</h4>
+				</a>
 			</div>
+		</div>
 			<token-token ng-hide="showToken"></token-token>
 	</form>
 </div>
+</div>
+<div class="movie-bottom"></div>

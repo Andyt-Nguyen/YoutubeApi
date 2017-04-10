@@ -230,6 +230,7 @@ YoutubeApp.service('MovieService', ['$http', function ($http) {
 				q: searchResults,
 				type: 'video',
 				videoType: 'movie',
+				videoDuration: 'long',
 				safeSearch: 'moderate',
 				pageToken: this.token
 			}

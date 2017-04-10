@@ -4,13 +4,58 @@ $grey: #ccc;
 $lighterGrey: #DADDD8;
 $prettyFont:'Raleway', sans-serif;;
 
+.searchBody {
+	background: white;
+}
+
+.movieBody {
+	background: #212121;
+}
 body {
 	h1{
 		font-family: $prettyFont;
 	}
 }
+
+.channel-title {
+	font-family: $prettyFont;
+	color:#fff8e1;
+}
+
+.search-text {
+	color: black;
+}
+
+.movie-text {
+	color: #fff;
+}
+
+.search-block {
+	width: 80%;
+	height: 100px;
+	text-align: center;
+	margin: 0 auto;
+}
+.search-top {
+	background: #fff;
+}
+
+.search-bottom {
+	background: #fff;
+	height: auto;
+}
+
+.movie-upper {
+	background: #212121;
+}
+
+.movie-bottom {
+	background: #212121;
+	width: 100%;
+	height: 43vh;
+}
 // .container-fluid {
-// 	input[type=text] {
+// 	input[type=search] {
 // 		text-align: center;
 // 		font-size: 25px;
 // 		margin-left: 20%;
@@ -28,9 +73,9 @@ body {
 //     transition: width 0.4s ease-in-out;
 // 	}
 // }
-//
+
 // .container-fluid {
-// 	input[type=text]:focus {
+// 	input[type=search]:focus {
 // 		border-bottom: 1px solid #ff1744;
 // 		box-shadow: 0 1px 0 0 #ff1744;
 //     width: 58%;
