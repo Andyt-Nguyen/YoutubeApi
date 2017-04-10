@@ -19,7 +19,7 @@ YoutubeApp.service('YoutubeService',['$http', function($http){
 				part: "snippet, id",
 				chart: 'mostPopular',
 				myRating:'like',
-				maxResults: 15,
+				maxResults: 12,
 				q: searchResults,
 				type: 'video',
 				safeSearch: 'moderate',
@@ -36,7 +36,7 @@ YoutubeApp.service('YoutubeService',['$http', function($http){
 
 
 		return promise.then(function(response){
-			console.log('Service Promise Response: ', response);
+			console.log('Service Search Promise Response: ', response);
 			return response.data;
 
 		});
@@ -52,10 +52,9 @@ YoutubeApp.service('YoutubeService',['$http', function($http){
 				key: "AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ",
 				part: "snippet, id",
 				chart: 'mostPopular',
-				order: 'relevance',
 				relevanceLanguage:'en',
 				myRating:'like',
-				maxResults: 15,
+				maxResults: 12,
 				q: searchResults,
 				type: 'video',
 				videoType: 'movie',
@@ -90,7 +89,7 @@ YoutubeApp.service('YoutubeService',['$http', function($http){
 				key: 'AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ',
 				part: 'statistics, snippet',
 				chart: 'mostPopular',
-				maxResults: 15
+				maxResults: 15,
 			}
 		});
 		return promise.then(function(response){

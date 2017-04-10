@@ -10,9 +10,10 @@ YoutubeApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvi
 		templateUrl: 'mini-directives/movieSearch.html'
 	}).state('trends', {
 		url: '/trends',
-		templateUrl: 'views/trending.html'
+		templateUrl: 'views/trending.html',
+		controller: 'TrendingController'
 	});
-	$urlRouterProvider.otherwise('searcher');
+	$urlRouterProvider.otherwise('trends');
 }]);
 'use strict';
 
@@ -104,7 +105,7 @@ YoutubeApp.controller('YoutubeController', ['$scope', 'YoutubeService', function
 		});
 	};
 
-	//$scope.getYoutubeTrends = YoutubeService.getYoutubeTrends();
+	$scope.YoutubeApi = YoutubeService.getYoutubeSearch();
 }]);
 
 //Just In Case Things Goes Bad
@@ -150,40 +151,6 @@ YoutubeApp.controller('YoutubeController', ['$scope', 'YoutubeService', function
 // }]);
 'use strict';
 
-YoutubeApp.directive('movieSearch', function () {
-	return {
-		restrict: 'E',
-		templateUrl: 'views/searchmovie.html',
-		controller: 'YTMovieController'
-	};
-});
-'use strict';
-
-YoutubeApp.directive('navBar', function () {
-	return {
-		restrict: 'E',
-		templateUrl: "views/navbar.html"
-	};
-});
-"use strict";
-
-YoutubeApp.directive('tokenToken', function () {
-	return {
-		restrict: "E",
-		controller: "YoutubeController",
-		templateUrl: 'views/pagetoken.html'
-	};
-});
-'use strict';
-
-YoutubeApp.directive('searchBar', function () {
-	return {
-		controller: 'YoutubeController',
-		templateUrl: 'views/searchbar.html'
-	};
-});
-'use strict';
-
 YoutubeApp.service('YoutubeService', ['$http', function ($http) {
 	console.log('You REACHED the service');
 
@@ -202,7 +169,7 @@ YoutubeApp.service('YoutubeService', ['$http', function ($http) {
 				part: "snippet, id",
 				chart: 'mostPopular',
 				myRating: 'like',
-				maxResults: 15,
+				maxResults: 12,
 				q: searchResults,
 				type: 'video',
 				safeSearch: 'moderate',
@@ -218,7 +185,7 @@ YoutubeApp.service('YoutubeService', ['$http', function ($http) {
 		};
 
 		return promise.then(function (response) {
-			console.log('Service Promise Response: ', response);
+			console.log('Service Search Promise Response: ', response);
 			return response.data;
 		});
 	};
@@ -232,10 +199,9 @@ YoutubeApp.service('YoutubeService', ['$http', function ($http) {
 				key: "AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ",
 				part: "snippet, id",
 				chart: 'mostPopular',
-				order: 'relevance',
 				relevanceLanguage: 'en',
 				myRating: 'like',
-				maxResults: 15,
+				maxResults: 12,
 				q: searchResults,
 				type: 'video',
 				videoType: 'movie',
@@ -295,4 +261,38 @@ YoutubeApp.service('YoutubeService', ['$http', function ($http) {
 // 		this.getYoutubeData();
 // 	}, 2000);
 // };
+'use strict';
+
+YoutubeApp.directive('movieSearch', function () {
+	return {
+		restrict: 'E',
+		templateUrl: 'views/searchmovie.html',
+		controller: 'YTMovieController'
+	};
+});
+'use strict';
+
+YoutubeApp.directive('navBar', function () {
+	return {
+		restrict: 'E',
+		templateUrl: "views/navbar.html"
+	};
+});
+"use strict";
+
+YoutubeApp.directive('tokenToken', function () {
+	return {
+		restrict: "E",
+		controller: "YoutubeController",
+		templateUrl: 'views/pagetoken.html'
+	};
+});
+'use strict';
+
+YoutubeApp.directive('searchBar', function () {
+	return {
+		controller: 'YoutubeController',
+		templateUrl: 'views/searchbar.html'
+	};
+});
 //# sourceMappingURL=bundle.js.map

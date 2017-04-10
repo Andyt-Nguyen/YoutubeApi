@@ -11,9 +11,10 @@ YoutubeApp.config(['$stateProvider','$urlRouterProvider', function($stateProvide
 	})
 	.state('trends',{
 		url:'/trends',
-		templateUrl: 'views/trending.html'
+		templateUrl: 'views/trending.html',
+		controller:'TrendingController'
 	})
 	$urlRouterProvider
-	.otherwise('searcher')
+	.otherwise('trends')
 
 }]);

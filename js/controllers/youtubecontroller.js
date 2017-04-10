@@ -30,7 +30,7 @@ YoutubeApp.controller('YoutubeController', ['$scope','YoutubeService', function(
 		});
 	}
 
-	//$scope.getYoutubeTrends = YoutubeService.getYoutubeTrends();
+	$scope.YoutubeApi = YoutubeService.getYoutubeSearch();
 }]);
 
 
