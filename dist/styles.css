@@ -11,7 +11,7 @@ body h1 {
 
 .channel-title {
   font-family: "Raleway", sans-serif;
-  color: #fff8e1; }
+  color: #ff3d00; }
 
 .search-text {
   color: black; }
@@ -20,7 +20,7 @@ body h1 {
   color: #fff; }
 
 .search-block {
-  width: 80%;
+  width: 20%;
   height: 100px;
   text-align: center;
   margin: 0 auto; }
@@ -38,7 +38,7 @@ body h1 {
 .movie-bottom {
   background: #212121;
   width: 100%;
-  height: 43vh; }
+  height: 70vh; }
 
 a .youtube {
   list-style: none;
@@ -49,8 +49,13 @@ a span {
   color: black;
   border-top: 2px solid #fff; }
 
+.tube-bg {
+  width: 50%;
+  height: 100px;
+  margin: 0 auto; }
+
 div .youtube-bg {
-  width: 50%; }
+  width: 30%; }
 
 .youtube img {
   margin: 40px 20px 0 10px;

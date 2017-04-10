@@ -9,6 +9,10 @@ YoutubeApp.config(['$stateProvider','$urlRouterProvider', function($stateProvide
 		url:'/movies',
 		templateUrl: 'mini-directives/movieSearch.html'
 	})
+	.state('trends',{
+		url:'/trends',
+		templateUrl: 'views/trending.html'
+	})
 	$urlRouterProvider
 	.otherwise('searcher')
 

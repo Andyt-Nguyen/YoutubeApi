@@ -69,7 +69,6 @@ YoutubeApp.service('YoutubeService',['$http', function($http){
 		this.moveTokenPage = function (token){
 			console.log('Function MOVETOKEN PROMISE',token);
 			this.token = token;
-			//this.getYoutubeData(searchResults);
 		};
 
 
@@ -95,10 +94,26 @@ YoutubeApp.service('YoutubeService',['$http', function($http){
 			}
 		});
 		return promise.then(function(response){
-			console.log('This is the Views Service Response Data: ', response.data);
+			console.log('This is the Trending Service Response Data: ', response.data);
 			return response.data;
 		})
 	};
+
+}]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -112,9 +127,6 @@ YoutubeApp.service('YoutubeService',['$http', function($http){
 	// 		}
 	// 	})
 	// }
-
-}]);
-
 
 
 // this.moveTokenPage = function(searchResults,token){

@@ -8,6 +8,9 @@ YoutubeApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvi
 	}).state('movies', {
 		url: '/movies',
 		templateUrl: 'mini-directives/movieSearch.html'
+	}).state('trends', {
+		url: '/trends',
+		templateUrl: 'views/trending.html'
 	});
 	$urlRouterProvider.otherwise('searcher');
 }]);
@@ -55,6 +58,21 @@ YoutubeApp.controller('YTMovieController', ['$scope', 'YoutubeService', function
 }]);
 'use strict';
 
+YoutubeApp.controller('TrendingController', ['$scope', 'YoutubeService', function ($scope, YoutubeService) {
+	console.log('hello');
+	$scope.getTrendingData = function () {
+		var promise = YoutubeService.getYoutubeTrends();
+		console.log('Inside getTrendingData');
+		promise.then(function (response) {
+			console.log('Youtube Trending Data: ', response.items);
+			$scope.trendingYt = response.items;
+		});
+	};
+	$scope.getTrendingData();
+	$scope.getYoutubeTrends = YoutubeService.getYoutubeTrends();
+}]);
+'use strict';
+
 YoutubeApp.controller('YoutubeController', ['$scope', 'YoutubeService', function ($scope, YoutubeService) {
 
 	console.log('Inside the controller.');
@@ -86,7 +104,7 @@ YoutubeApp.controller('YoutubeController', ['$scope', 'YoutubeService', function
 		});
 	};
 
-	$scope.getYoutubeTrends = YoutubeService.getYoutubeTrends();
+	//$scope.getYoutubeTrends = YoutubeService.getYoutubeTrends();
 }]);
 
 //Just In Case Things Goes Bad
@@ -130,6 +148,40 @@ YoutubeApp.controller('YoutubeController', ['$scope', 'YoutubeService', function
 // 		});
 // 	}
 // }]);
+'use strict';
+
+YoutubeApp.directive('movieSearch', function () {
+	return {
+		restrict: 'E',
+		templateUrl: 'views/searchmovie.html',
+		controller: 'YTMovieController'
+	};
+});
+'use strict';
+
+YoutubeApp.directive('navBar', function () {
+	return {
+		restrict: 'E',
+		templateUrl: "views/navbar.html"
+	};
+});
+"use strict";
+
+YoutubeApp.directive('tokenToken', function () {
+	return {
+		restrict: "E",
+		controller: "YoutubeController",
+		templateUrl: 'views/pagetoken.html'
+	};
+});
+'use strict';
+
+YoutubeApp.directive('searchBar', function () {
+	return {
+		controller: 'YoutubeController',
+		templateUrl: 'views/searchbar.html'
+	};
+});
 'use strict';
 
 YoutubeApp.service('YoutubeService', ['$http', function ($http) {
@@ -197,7 +249,6 @@ YoutubeApp.service('YoutubeService', ['$http', function ($http) {
 		this.moveTokenPage = function (token) {
 			console.log('Function MOVETOKEN PROMISE', token);
 			this.token = token;
-			//this.getYoutubeData(searchResults);
 		};
 
 		return promise.then(function (response) {
@@ -219,22 +270,23 @@ YoutubeApp.service('YoutubeService', ['$http', function ($http) {
 			}
 		});
 		return promise.then(function (response) {
-			console.log('This is the Views Service Response Data: ', response.data);
+			console.log('This is the Trending Service Response Data: ', response.data);
 			return response.data;
 		});
 	};
-
-	// this.getYoutubeCategories = function(){
-	// 	var promise =
-	// 	$http({
-	// 		method: "GET",
-	// 		url: ytbaseurl + 'videoCategories',
-	// 		params: {
-	//
-	// 		}
-	// 	})
-	// }
 }]);
+
+// this.getYoutubeCategories = function(){
+// 	var promise =
+// 	$http({
+// 		method: "GET",
+// 		url: ytbaseurl + 'videoCategories',
+// 		params: {
+//
+// 		}
+// 	})
+// }
+
 
 // this.moveTokenPage = function(searchResults,token){
 // 	console.log('Thisi5555 si s',token);
@@ -243,38 +295,4 @@ YoutubeApp.service('YoutubeService', ['$http', function ($http) {
 // 		this.getYoutubeData();
 // 	}, 2000);
 // };
-'use strict';
-
-YoutubeApp.directive('movieSearch', function () {
-	return {
-		restrict: 'E',
-		templateUrl: 'views/searchmovie.html',
-		controller: 'YTMovieController'
-	};
-});
-'use strict';
-
-YoutubeApp.directive('navBar', function () {
-	return {
-		restrict: 'E',
-		templateUrl: "views/navbar.html"
-	};
-});
-"use strict";
-
-YoutubeApp.directive('tokenToken', function () {
-	return {
-		restrict: "E",
-		controller: "YoutubeController",
-		templateUrl: 'views/pagetoken.html'
-	};
-});
-'use strict';
-
-YoutubeApp.directive('searchBar', function () {
-	return {
-		controller: 'YoutubeController',
-		templateUrl: 'views/searchbar.html'
-	};
-});
 //# sourceMappingURL=bundle.js.map

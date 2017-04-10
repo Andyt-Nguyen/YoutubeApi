@@ -1,0 +1,31 @@
+<header ng-include="'logo.html'"></header>
+<div ng-controller="TrendingController">
+	<div class="container-fluid">
+		<div class='row'>
+			<div ng-repeat="trends in trendingYt">
+				<div class="col-md-4">
+					<a class="youtube" style="text-decoration:none;" href="{{watchUrl + trends.id.videoId}}">
+						<img class="card-panel hoverable" ng-src="{{trends.snippet.thumbnails.high.url}}" alt="">
+					</a>
+					<a class="youtube" style="text-decoration:none;"  href="{{watchUrl + trends.id}}">
+						<p class="title">{{trends.snippet.title}}</p>
+						<h4 class="channel-title"><small>Uploaded by: </small>{{trends.snippet.channelTitle}}</h4>
+					</a>
+					<!-- <h1>{{trends.snippet.title}}</h1> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <div ng-repeat="youtubes in youtube">
+	<div class="col-md-4 col-sm-6 col-xs-12">
+		<a class="youtube" style="text-decoration:none;"  href="{{watchUrl + youtubes.id.videoId}}">
+			<img class="card-panel hoverable" ng-src="{{youtubes.snippet.thumbnails.high.url}}" alt="">
+		</a>
+		<a class="youtube" style="text-decoration:none;" href="{{watchUrl + youtubes.id.videoId}}">
+			<p class="title">{{youtubes.snippet.title}}</p>
+			<h4 class="channel-title"><small>Uploaded by: </small>{{youtubes.snippet.channelTitle}}</h4>
+		</a>
+	</div>
+</div> -->
