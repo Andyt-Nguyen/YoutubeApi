@@ -1,5 +1,4 @@
-YoutubeApp
-.service('YoutubeService',['$http', function($http){
+YoutubeApp.service('YoutubeService',['$http', function($http){
 	console.log('You REACHED the service');
 
 
@@ -8,6 +7,7 @@ YoutubeApp
 	this.watchUrl = "https://www.youtube.com/watch?v=";
 
 
+//Youtube Search----------------------------------------->
 	this.getYoutubeSearch = function(searchResults){
 		var promise =
 		$http({
@@ -15,6 +15,7 @@ YoutubeApp
 			url: ytbaseurl + 'search',
 			params: {
 				key: "AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ",
+				order: 'relevance',
 				part: "snippet, id",
 				chart: 'mostPopular',
 				myRating:'like',
@@ -41,7 +42,47 @@ YoutubeApp
 		});
 	}
 
-	this.getYoutubeViews = function(){
+	//Youtube Movies-------------------------------------------->
+	this.getMovieData = function(searchResults){
+		var promise =
+		$http({
+			method: "GET",
+			url: ytbaseurl + 'search',
+			params: {
+				key: "AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ",
+				part: "snippet, id",
+				chart: 'mostPopular',
+				order: 'relevance',
+				relevanceLanguage:'en',
+				myRating:'like',
+				maxResults: 15,
+				q: searchResults,
+				type: 'video',
+				videoType: 'movie',
+				videoDuration: 'long',
+				safeSearch: 'moderate',
+				pageToken: this.token
+			}
+		});
+		console.log('Hello Movie promise youtubeData Token!', this.token);
+
+		this.moveTokenPage = function (token){
+			console.log('Function MOVETOKEN PROMISE',token);
+			this.token = token;
+			//this.getYoutubeData(searchResults);
+		};
+
+
+		return promise.then(function(response){
+			console.log('Service promise', response);
+			return response.data;
+
+		});
+	}
+
+
+	//Youtube Trends-------------------------------------------->
+	this.getYoutubeTrends = function(){
 		var promise =
 		$http({
 			method: "GET",
@@ -50,13 +91,27 @@ YoutubeApp
 				key: 'AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ',
 				part: 'statistics, snippet',
 				chart: 'mostPopular',
+				maxResults: 15
 			}
 		});
 		return promise.then(function(response){
 			console.log('This is the Views Service Response Data: ', response.data);
 			return response.data;
 		})
-	}
+	};
+
+
+
+	// this.getYoutubeCategories = function(){
+	// 	var promise =
+	// 	$http({
+	// 		method: "GET",
+	// 		url: ytbaseurl + 'videoCategories',
+	// 		params: {
+	//
+	// 		}
+	// 	})
+	// }
 
 }]);
 

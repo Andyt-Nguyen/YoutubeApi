@@ -1,5 +1,4 @@
-YoutubeApp
-.controller('YoutubeController', ['$scope','YoutubeService', function($scope, YoutubeService){
+YoutubeApp.controller('YoutubeController', ['$scope','YoutubeService', function($scope, YoutubeService){
 
 	console.log('Inside the controller.');
 	$scope.youtubeLogo = YoutubeService.youtubeLogo;
@@ -31,7 +30,7 @@ YoutubeApp
 		});
 	}
 
-	$scope.getYoutubeViews = YoutubeService.getYoutubeViews();
+	$scope.getYoutubeTrends = YoutubeService.getYoutubeTrends();
 }]);
 
 

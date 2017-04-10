@@ -1,10 +1,6 @@
 var YoutubeApp = angular.module('YoutubeApp',['ui.router']);
 YoutubeApp.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 	$stateProvider
-	.state('home', {
-		url:'/',
-		templateUrl: 'index.html',
-	})
 	.state('searcher', {
 		url:'/search',
 		templateUrl: 'mini-directives/searchBar.html'
@@ -13,5 +9,7 @@ YoutubeApp.config(['$stateProvider','$urlRouterProvider', function($stateProvide
 		url:'/movies',
 		templateUrl: 'mini-directives/movieSearch.html'
 	})
+	$urlRouterProvider
+	.otherwise('searcher')
 
 }]);
