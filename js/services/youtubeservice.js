@@ -14,7 +14,7 @@ YoutubeApp.service('YoutubeService',['$http', function($http){
 			method: "GET",
 			url: ytbaseurl + 'search',
 			params: {
-				key: "AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ",
+				key: "-------API KEy-------",
 				order: 'relevance',
 				part: "snippet, id",
 				chart: 'mostPopular',
@@ -49,7 +49,7 @@ YoutubeApp.service('YoutubeService',['$http', function($http){
 			method: "GET",
 			url: ytbaseurl + 'search',
 			params: {
-				key: "AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ",
+				key: "-----API Key------",
 				part: "snippet, id",
 				chart: 'mostPopular',
 				relevanceLanguage:'en',
@@ -86,7 +86,7 @@ YoutubeApp.service('YoutubeService',['$http', function($http){
 			method: "GET",
 			url: ytbaseurl + 'videos',
 			params: {
-				key: 'AIzaSyDlPmknZS4zRY9KPWfm8f3v6OYSfB3UivQ',
+				key: '----------API Key------------',
 				part: 'statistics, snippet',
 				chart: 'mostPopular',
 				maxResults: 15,
